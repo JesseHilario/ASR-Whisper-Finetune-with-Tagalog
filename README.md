@@ -2,9 +2,13 @@
 
 ##### Table of Contents  
 [Background](#background)  
+
 [Method](#method)
+
 [Results](#results) 
+
 [Discussion](#discussion)  
+
 [References](#references)
 
 
@@ -13,6 +17,7 @@
 ## Background
 
 ### Motivation
+
 - For Automatic Speech Recognition (ASR), there is the problem of the "limiting size of existing high-quality supervised datasets" (Radford et al., 2022, p.1).
 - Another problem is generalization for models when evaluating datasets not including those they were trained on; these models may be state-of-the-art (SOTA) for their respective datasets, but can be much less robust when tested using outside datasets
 - In image recognition, using much larger but weakly supervised datasets compared to high-quality datasets has greatly improved generalizability. This could be applied to ASR
