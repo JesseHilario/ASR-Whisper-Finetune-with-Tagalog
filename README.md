@@ -1,1 +1,8 @@
-# ASR-Whisper-Finetune-with-Tagalog
+# Automatic Speech Recognition with Whisper: Tagalog
+
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
