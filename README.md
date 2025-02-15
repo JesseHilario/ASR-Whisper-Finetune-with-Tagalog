@@ -13,7 +13,6 @@
 
 
 
-<a name="background"/>
 ## Background
 
 ### Motivation
