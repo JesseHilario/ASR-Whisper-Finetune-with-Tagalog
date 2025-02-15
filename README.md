@@ -29,7 +29,7 @@
 - However, the model only uses 117,000 hours for the rest of 96 languages. This means low-resource languages have much less training time in comparison to their counterparts
 - I set out to answer if the current transcription metrics can be improved by further fine-tuning a checkpoint on a specific language--Tagalog--and to demonstrate this newly-tuned Whisper model using this language
 
-<a name="method"/>
+
 ## Method
 
 ### Data
@@ -58,7 +58,6 @@ Dataset link:
 
 
 
-<a name="results"/>
 ## Results
 
 - The WER achieved from the Fleurs test set was 16.08%, while the WER from the bloom-speech test set was 16.63%. This seemed to indicate that our training did handle generalization well as the discrepancy between both WER scores were not significant.
@@ -75,7 +74,7 @@ And for mobile:
 ![image](https://github.com/user-attachments/assets/84f51420-9658-4b50-a007-c9b28c333072)
 
 
-<a name="discussion"/>
+
 ## Discussion
 
 - We need a lot more data if we want the WER to get below 10%. Even English transcription doesn't get below 5% for most datasets evaluated in the Whisper paper, and that is the most high resource language.
@@ -85,6 +84,6 @@ And for mobile:
 - When switching between Colab and Wulver, difference between library versions made a big difference and would prevent certain versions from running or not (e.g., NumPy had to be less than 2.0.0)
 
 
-<a name="references"/>
+
 ## References
   Radford, A., Kim, J. W., Xu, T., Brockman, G., McLeavey, C., & Sutskever, I. (2023, July). Robust speech recognition via large-scale weak supervision. In International conference on machine learning (pp. 28492-28518). PMLR.
