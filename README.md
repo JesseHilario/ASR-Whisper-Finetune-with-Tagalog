@@ -67,10 +67,16 @@ Dataset link:
 
 ### Live Demo
 We were able to create a live demo using Gradio. Here are the results for a locally-run website:
+
 ![image](https://github.com/user-attachments/assets/28affd06-8d9b-4378-aeaf-8262f2f33a47)
 
+
 And for mobile:
+
+
 ![image](https://github.com/user-attachments/assets/68fd3a46-ed06-4a38-8e5a-5cae73fac0a6)
+
+
 ![image](https://github.com/user-attachments/assets/84f51420-9658-4b50-a007-c9b28c333072)
 
 
