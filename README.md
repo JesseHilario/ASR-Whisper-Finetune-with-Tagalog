@@ -11,6 +11,7 @@
 
 <a name="background"/>
 ## Background
+
 ### Motivation
 - For Automatic Speech Recognition (ASR), there is the problem of the "limiting size of existing high-quality supervised datasets" (Radford et al., 2022, p.1).
 - Another problem is generalization for models when evaluating datasets not including those they were trained on; these models may be state-of-the-art (SOTA) for their respective datasets, but can be much less robust when tested using outside datasets
@@ -26,6 +27,7 @@
 
 <a name="method"/>
 ## Method
+
 ### Data
 - Fleurs Dataset: ~1.36 GB of data in Tagalog, or about 10 hours of audio data in the training set. There are 1884 rows in the training set, 418 rows in the validation set, and 964 rows in the test set. This means that the dataset is small; we will 
 Dataset link:
@@ -41,6 +43,7 @@ Dataset link:
 
 ### Model
 ![Transformer Architecture used by Radford et al.,2022](https://github.com/user-attachments/assets/8964ee8f-036a-46c2-9b79-9aeedeae60a6)
+*Transformer Architecture used by Radford et al.,2022*
 - The Whisper model follows the transformer architecture. I note here of the model’s use of learned positional encoding in the decoder and the encoder processes small stem consisting of two convolutional layers with kernel width of 3 and GELU activation. Note as well that the input of the encoder is the Log-Mel Spectrogram. These are additions to the transformer architecture from lecture.
 - We chose to use the Whisper-small model due to the limited size of our dataset.
 
@@ -54,8 +57,29 @@ Dataset link:
 <a name="results"/>
 ## Results
 
+- The WER achieved from the Fleurs test set was 16.08%, while the WER from the bloom-speech test set was 16.63%. This seemed to indicate that our training did handle generalization well as the discrepancy between both WER scores were not significant.
+![image](https://github.com/user-attachments/assets/7eab8915-4485-4e0a-baff-c31f25f5c33c)
+- You might notice overfitting. This is likely the result of such a small dataset and using the Whisper-small model.
+- Compare the WER from the Whisper model. As you can see, our results beat the results of the Transcription from the Whisper original paper by over 10%. This indicates that we were able to see improvements by fine-tuning the model on more data of this low-resource language.
+
+### Live Demo
+We were able to create a live demo using Gradio. Here are the results for a locally-run website:
+![image](https://github.com/user-attachments/assets/28affd06-8d9b-4378-aeaf-8262f2f33a47)
+
+And for mobile:
+![image](https://github.com/user-attachments/assets/68fd3a46-ed06-4a38-8e5a-5cae73fac0a6)
+![image](https://github.com/user-attachments/assets/84f51420-9658-4b50-a007-c9b28c333072)
+
+
 <a name="discussion"/>
 ## Discussion
+
+- We need a lot more data if we want the WER to get below 10%. Even English transcription doesn't get below 5% for most datasets evaluated in the Whisper paper, and that is the most high resource language.
+- We need more data even still for translation from Tagalog; we could not find a single one on HuggingFace
+- There were only 2 datasets usable on HuggingFace for the task of transcription of Tagalog
+- Using basic-normalize for the correct calculation of the WER rate helped produce correct results
+- When switching between Colab and Wulver, difference between library versions made a big difference and would prevent certain versions from running or not (e.g., NumPy had to be less than 2.0.0)
+
 
 <a name="references"/>
 ## References
